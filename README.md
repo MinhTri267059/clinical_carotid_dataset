@@ -3,9 +3,10 @@
 Bộ dữ liệu tổng hợp và mã nguồn mô hình **Multimodal Transformer với Khởi Tạo Phổ Quát (Self-Supervised Pre-training)** để phát hiện mảng xơ vữa động mạch cảnh.
 
 Thay vì huấn luyện mạng MLP và CNN rời rạc (rất dễ bị quá khớp trên dữ liệu nhỏ), phương pháp này biến đổi tất cả các loại dữ liệu (bảng và ảnh) thành định dạng chuỗi (tokens) và đưa vào một mô hình Transformer thống nhất.
-Tiền Huấn Luyện Tự Giám Sát (Self-Supervised Pre-training - SSP): Sử dụng chiến lược Masked Multimodal Reconstruction - che ngẫu nhiên một tỷ lệ phần trăm các giá trị bảng và các patch ảnh, rồi huấn luyện mô hình để tái tạo lại chúng.
-Xử Lý Đầu Vào Ảnh Không Đồng Đều: Nhóm đối chứng (Class 0) chỉ có 1 ảnh IMT, nhóm bệnh lý (Class 1) có 5 ảnh. Giải pháp: bổ sung ảnh đen (padding) để tất cả bệnh nhân đều có 5 ảnh đầu vào và sử dụng key_padding_mask trong Transformer của PyTorch để mô hình tự động bỏ qua các patch từ ảnh padding.
-Token Hóa Đặc Trưng (Feature Tokenization): Các đặc trưng liên tục (như LDL-C, ApoB, Lp(a)) được chiếu thành embeddings qua các lớp Linear riêng biệt. Đặc trưng phân loại (như Sex, Plaque_echogenicity) được nhúng qua lớp Embedding — tất cả đều có cùng chiều $d$ theo phong cách FT-Transformer.
+
+- Tiền Huấn Luyện Tự Giám Sát (Self-Supervised Pre-training - SSP): Sử dụng chiến lược Masked Multimodal Reconstruction - che ngẫu nhiên một tỷ lệ phần trăm các giá trị bảng và các patch ảnh, rồi huấn luyện mô hình để tái tạo lại chúng.
+- Xử Lý Đầu Vào Ảnh Không Đồng Đều: Nhóm đối chứng (Class 0) chỉ có 1 ảnh IMT, nhóm bệnh lý (Class 1) có 5 ảnh. Giải pháp: bổ sung ảnh đen (padding) để tất cả bệnh nhân đều có 5 ảnh đầu vào và sử dụng key_padding_mask trong Transformer của PyTorch để mô hình tự động bỏ qua các patch từ ảnh padding.
+- Token Hóa Đặc Trưng (Feature Tokenization): Các đặc trưng liên tục (như LDL-C, ApoB, Lp(a)) được chiếu thành embeddings qua các lớp Linear riêng biệt. Đặc trưng phân loại (như Sex, Plaque_echogenicity) được nhúng qua lớp Embedding — tất cả đều có cùng chiều $d$ theo phong cách FT-Transformer.
 ---
 
 
