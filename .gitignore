@@ -1,0 +1,11 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# macOS
+.DS_Store
+
+# Không commit file model lớn (nếu muốn dùng Git LFS thì bỏ dòng này)
+# outputs/*.pth
+# outputs_imt_only/*.pth

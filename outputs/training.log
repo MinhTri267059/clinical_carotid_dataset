@@ -1,0 +1,141 @@
+[2026-06-25 19:34:21] INFO | ==============================================================
+[2026-06-25 19:34:21] INFO |   MULTIMODAL TRANSFORMER — CAROTID ATHEROSCLEROSIS
+[2026-06-25 19:34:21] INFO |   Khởi tạo Phổ quát (Self-Supervised Pre-training)
+[2026-06-25 19:34:21] INFO | ==============================================================
+[2026-06-25 19:34:21] INFO | Device : cpu
+[2026-06-25 19:34:21] INFO | Config : embed_dim=128, heads=8, layers=4, ff_dim=256
+[2026-06-25 19:34:21] INFO | Image  : size=128, patch=16, patches/img=64, max_imgs=5
+[2026-06-25 19:34:21] INFO | Tokens : tab=10, img=320, total=331 (+CLS)
+[2026-06-25 19:34:21] INFO | === TIỀN XỬ LÝ DỮ LIỆU ===
+[2026-06-25 19:34:21] INFO | Tổng số bệnh nhân: 300
+[2026-06-25 19:34:21] INFO | Train: 240 | Test: 60
+[2026-06-25 19:34:21] INFO | Phân phối Train: {0: 164, 1: 76}
+[2026-06-25 19:34:21] INFO | Phân phối Test : {0: 41, 1: 19}
+[2026-06-25 19:34:21] INFO | Số tham số huấn luyện: 584,002
+[2026-06-25 19:34:21] INFO | 
+==============================================================
+[2026-06-25 19:34:21] INFO |  GIAI ĐOẠN 1: TIỀN HUẤN LUYỆN TỰ GIÁM SÁT (SSP)
+[2026-06-25 19:34:21] INFO |  Mask ratio=15% | Epochs=30 | LR=0.0001
+[2026-06-25 19:34:21] INFO | ==============================================================
+[2026-06-25 19:34:26] INFO | [Pre] Epoch   1/30 | MSE Loss=1.477433 | LR=9.97e-05 | T=4s
+[2026-06-25 19:34:30] INFO | [Pre] Epoch   2/30 | MSE Loss=0.630072 | LR=9.89e-05 | T=8s
+[2026-06-25 19:34:34] INFO | [Pre] Epoch   3/30 | MSE Loss=0.275933 | LR=9.76e-05 | T=13s
+[2026-06-25 19:34:38] INFO | [Pre] Epoch   4/30 | MSE Loss=0.212543 | LR=9.57e-05 | T=17s
+[2026-06-25 19:34:43] INFO | [Pre] Epoch   5/30 | MSE Loss=0.189335 | LR=9.33e-05 | T=21s
+[2026-06-25 19:34:47] INFO | [Pre] Epoch   6/30 | MSE Loss=0.192355 | LR=9.05e-05 | T=25s
+[2026-06-25 19:34:51] INFO | [Pre] Epoch   7/30 | MSE Loss=0.192356 | LR=8.72e-05 | T=29s
+[2026-06-25 19:34:55] INFO | [Pre] Epoch   8/30 | MSE Loss=0.191227 | LR=8.35e-05 | T=33s
+[2026-06-25 19:34:59] INFO | [Pre] Epoch   9/30 | MSE Loss=0.184955 | LR=7.94e-05 | T=38s
+[2026-06-25 19:35:03] INFO | [Pre] Epoch  10/30 | MSE Loss=0.190083 | LR=7.50e-05 | T=42s
+[2026-06-25 19:35:08] INFO | [Pre] Epoch  11/30 | MSE Loss=0.185378 | LR=7.03e-05 | T=46s
+[2026-06-25 19:35:12] INFO | [Pre] Epoch  12/30 | MSE Loss=0.197432 | LR=6.55e-05 | T=50s
+[2026-06-25 19:35:16] INFO | [Pre] Epoch  13/30 | MSE Loss=0.184738 | LR=6.04e-05 | T=54s
+[2026-06-25 19:35:20] INFO | [Pre] Epoch  14/30 | MSE Loss=0.171051 | LR=5.52e-05 | T=58s
+[2026-06-25 19:35:24] INFO | [Pre] Epoch  15/30 | MSE Loss=0.186333 | LR=5.00e-05 | T=62s
+[2026-06-25 19:35:28] INFO | [Pre] Epoch  16/30 | MSE Loss=0.180259 | LR=4.48e-05 | T=66s
+[2026-06-25 19:35:32] INFO | [Pre] Epoch  17/30 | MSE Loss=0.164806 | LR=3.96e-05 | T=71s
+[2026-06-25 19:35:36] INFO | [Pre] Epoch  18/30 | MSE Loss=0.174505 | LR=3.45e-05 | T=75s
+[2026-06-25 19:35:40] INFO | [Pre] Epoch  19/30 | MSE Loss=0.169987 | LR=2.97e-05 | T=79s
+[2026-06-25 19:35:45] INFO | [Pre] Epoch  20/30 | MSE Loss=0.161214 | LR=2.50e-05 | T=83s
+[2026-06-25 19:35:49] INFO | [Pre] Epoch  21/30 | MSE Loss=0.197241 | LR=2.06e-05 | T=87s
+[2026-06-25 19:35:53] INFO | [Pre] Epoch  22/30 | MSE Loss=0.166287 | LR=1.65e-05 | T=91s
+[2026-06-25 19:35:57] INFO | [Pre] Epoch  23/30 | MSE Loss=0.182016 | LR=1.28e-05 | T=95s
+[2026-06-25 19:36:01] INFO | [Pre] Epoch  24/30 | MSE Loss=0.165252 | LR=9.55e-06 | T=99s
+[2026-06-25 19:36:05] INFO | [Pre] Epoch  25/30 | MSE Loss=0.163090 | LR=6.70e-06 | T=104s
+[2026-06-25 19:36:09] INFO | [Pre] Epoch  26/30 | MSE Loss=0.182015 | LR=4.32e-06 | T=108s
+[2026-06-25 19:36:14] INFO | [Pre] Epoch  27/30 | MSE Loss=0.179978 | LR=2.45e-06 | T=112s
+[2026-06-25 19:36:18] INFO | [Pre] Epoch  28/30 | MSE Loss=0.173600 | LR=1.09e-06 | T=116s
+[2026-06-25 19:36:22] INFO | [Pre] Epoch  29/30 | MSE Loss=0.178963 | LR=2.74e-07 | T=120s
+[2026-06-25 19:36:26] INFO | [Pre] Epoch  30/30 | MSE Loss=0.180208 | LR=0.00e+00 | T=124s
+[2026-06-25 19:36:26] INFO | 
+→ Lưu trọng số tiền huấn luyện: /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/multimodal_transformer_pretrained.pth
+[2026-06-25 19:36:26] INFO | 
+==============================================================
+[2026-06-25 19:36:26] INFO |  GIAI ĐOẠN 2: TINH CHỈNH CÓ GIÁM SÁT (SUPERVISED FINE-TUNING)
+[2026-06-25 19:36:26] INFO |  Epochs=60 | LR=5e-05
+[2026-06-25 19:36:26] INFO | ==============================================================
+[2026-06-25 19:36:30] INFO | [FT] Ep   1/60 | Tr Loss=0.6340 Acc=0.6833 F1=0.0000 | Va Loss=0.6178 Acc=0.6833 F1=0.0000 AUC=1.0000 | T=4s  ← BEST ✓
+[2026-06-25 19:36:35] INFO | [FT] Ep   2/60 | Tr Loss=0.6194 Acc=0.6833 F1=0.0000 | Va Loss=0.6116 Acc=0.6833 F1=0.0000 AUC=1.0000 | T=9s
+[2026-06-25 19:36:39] INFO | [FT] Ep   3/60 | Tr Loss=0.6084 Acc=0.6833 F1=0.0000 | Va Loss=0.5840 Acc=0.6833 F1=0.0000 AUC=1.0000 | T=13s
+[2026-06-25 19:36:43] INFO | [FT] Ep   4/60 | Tr Loss=0.5667 Acc=0.6833 F1=0.0000 | Va Loss=0.5227 Acc=0.6833 F1=0.0000 AUC=1.0000 | T=17s
+[2026-06-25 19:36:48] INFO | [FT] Ep   5/60 | Tr Loss=0.4669 Acc=0.6917 F1=0.0513 | Va Loss=0.3530 Acc=0.6833 F1=0.0000 AUC=1.0000 | T=22s
+[2026-06-25 19:36:52] INFO | [FT] Ep   6/60 | Tr Loss=0.2517 Acc=0.9542 F1=0.9220 | Va Loss=0.1385 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=26s  ← BEST ✓
+[2026-06-25 19:36:57] INFO | [FT] Ep   7/60 | Tr Loss=0.1043 Acc=1.0000 F1=1.0000 | Va Loss=0.0639 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=30s
+[2026-06-25 19:37:01] INFO | [FT] Ep   8/60 | Tr Loss=0.0568 Acc=1.0000 F1=1.0000 | Va Loss=0.0381 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=35s
+[2026-06-25 19:37:05] INFO | [FT] Ep   9/60 | Tr Loss=0.0353 Acc=1.0000 F1=1.0000 | Va Loss=0.0265 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=39s
+[2026-06-25 19:37:09] INFO | [FT] Ep  10/60 | Tr Loss=0.0273 Acc=1.0000 F1=1.0000 | Va Loss=0.0203 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=43s
+[2026-06-25 19:37:14] INFO | [FT] Ep  11/60 | Tr Loss=0.0213 Acc=1.0000 F1=1.0000 | Va Loss=0.0162 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=48s
+[2026-06-25 19:37:18] INFO | [FT] Ep  12/60 | Tr Loss=0.0185 Acc=1.0000 F1=1.0000 | Va Loss=0.0134 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=52s
+[2026-06-25 19:37:23] INFO | [FT] Ep  13/60 | Tr Loss=0.0146 Acc=1.0000 F1=1.0000 | Va Loss=0.0114 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=57s
+[2026-06-25 19:37:27] INFO | [FT] Ep  14/60 | Tr Loss=0.0130 Acc=1.0000 F1=1.0000 | Va Loss=0.0099 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=61s
+[2026-06-25 19:37:31] INFO | [FT] Ep  15/60 | Tr Loss=0.0116 Acc=1.0000 F1=1.0000 | Va Loss=0.0088 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=65s
+[2026-06-25 19:37:36] INFO | [FT] Ep  16/60 | Tr Loss=0.0108 Acc=1.0000 F1=1.0000 | Va Loss=0.0078 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=70s
+[2026-06-25 19:37:40] INFO | [FT] Ep  17/60 | Tr Loss=0.0096 Acc=1.0000 F1=1.0000 | Va Loss=0.0071 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=74s
+[2026-06-25 19:37:44] INFO | [FT] Ep  18/60 | Tr Loss=0.0090 Acc=1.0000 F1=1.0000 | Va Loss=0.0065 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=78s
+[2026-06-25 19:37:49] INFO | [FT] Ep  19/60 | Tr Loss=0.0085 Acc=1.0000 F1=1.0000 | Va Loss=0.0059 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=83s
+[2026-06-25 19:37:53] INFO | [FT] Ep  20/60 | Tr Loss=0.0076 Acc=1.0000 F1=1.0000 | Va Loss=0.0055 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=87s
+[2026-06-25 19:37:57] INFO | [FT] Ep  21/60 | Tr Loss=0.0075 Acc=1.0000 F1=1.0000 | Va Loss=0.0051 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=91s
+[2026-06-25 19:38:02] INFO | [FT] Ep  22/60 | Tr Loss=0.0071 Acc=1.0000 F1=1.0000 | Va Loss=0.0048 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=96s
+[2026-06-25 19:38:06] INFO | [FT] Ep  23/60 | Tr Loss=0.0059 Acc=1.0000 F1=1.0000 | Va Loss=0.0045 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=100s
+[2026-06-25 19:38:11] INFO | [FT] Ep  24/60 | Tr Loss=0.0056 Acc=1.0000 F1=1.0000 | Va Loss=0.0043 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=105s
+[2026-06-25 19:38:15] INFO | [FT] Ep  25/60 | Tr Loss=0.0058 Acc=1.0000 F1=1.0000 | Va Loss=0.0041 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=109s
+[2026-06-25 19:38:20] INFO | [FT] Ep  26/60 | Tr Loss=0.0053 Acc=1.0000 F1=1.0000 | Va Loss=0.0039 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=114s
+[2026-06-25 19:38:24] INFO | [FT] Ep  27/60 | Tr Loss=0.0053 Acc=1.0000 F1=1.0000 | Va Loss=0.0037 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=118s
+[2026-06-25 19:38:28] INFO | [FT] Ep  28/60 | Tr Loss=0.0050 Acc=1.0000 F1=1.0000 | Va Loss=0.0036 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=122s
+[2026-06-25 19:38:33] INFO | [FT] Ep  29/60 | Tr Loss=0.0047 Acc=1.0000 F1=1.0000 | Va Loss=0.0034 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=127s
+[2026-06-25 19:38:37] INFO | [FT] Ep  30/60 | Tr Loss=0.0047 Acc=1.0000 F1=1.0000 | Va Loss=0.0033 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=131s
+[2026-06-25 19:38:42] INFO | [FT] Ep  31/60 | Tr Loss=0.0045 Acc=1.0000 F1=1.0000 | Va Loss=0.0032 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=136s
+[2026-06-25 19:38:46] INFO | [FT] Ep  32/60 | Tr Loss=0.0045 Acc=1.0000 F1=1.0000 | Va Loss=0.0031 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=140s
+[2026-06-25 19:38:50] INFO | [FT] Ep  33/60 | Tr Loss=0.0044 Acc=1.0000 F1=1.0000 | Va Loss=0.0030 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=144s
+[2026-06-25 19:38:55] INFO | [FT] Ep  34/60 | Tr Loss=0.0039 Acc=1.0000 F1=1.0000 | Va Loss=0.0029 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=149s
+[2026-06-25 19:38:59] INFO | [FT] Ep  35/60 | Tr Loss=0.0040 Acc=1.0000 F1=1.0000 | Va Loss=0.0028 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=153s
+[2026-06-25 19:39:04] INFO | [FT] Ep  36/60 | Tr Loss=0.0039 Acc=1.0000 F1=1.0000 | Va Loss=0.0028 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=158s
+[2026-06-25 19:39:08] INFO | [FT] Ep  37/60 | Tr Loss=0.0036 Acc=1.0000 F1=1.0000 | Va Loss=0.0027 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=162s
+[2026-06-25 19:39:12] INFO | [FT] Ep  38/60 | Tr Loss=0.0037 Acc=1.0000 F1=1.0000 | Va Loss=0.0027 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=166s
+[2026-06-25 19:39:17] INFO | [FT] Ep  39/60 | Tr Loss=0.0039 Acc=1.0000 F1=1.0000 | Va Loss=0.0026 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=171s
+[2026-06-25 19:39:21] INFO | [FT] Ep  40/60 | Tr Loss=0.0037 Acc=1.0000 F1=1.0000 | Va Loss=0.0026 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=175s
+[2026-06-25 19:39:25] INFO | [FT] Ep  41/60 | Tr Loss=0.0035 Acc=1.0000 F1=1.0000 | Va Loss=0.0025 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=179s
+[2026-06-25 19:39:30] INFO | [FT] Ep  42/60 | Tr Loss=0.0036 Acc=1.0000 F1=1.0000 | Va Loss=0.0025 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=184s
+[2026-06-25 19:39:34] INFO | [FT] Ep  43/60 | Tr Loss=0.0034 Acc=1.0000 F1=1.0000 | Va Loss=0.0024 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=188s
+[2026-06-25 19:39:38] INFO | [FT] Ep  44/60 | Tr Loss=0.0033 Acc=1.0000 F1=1.0000 | Va Loss=0.0024 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=192s
+[2026-06-25 19:39:43] INFO | [FT] Ep  45/60 | Tr Loss=0.0033 Acc=1.0000 F1=1.0000 | Va Loss=0.0024 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=197s
+[2026-06-25 19:39:47] INFO | [FT] Ep  46/60 | Tr Loss=0.0031 Acc=1.0000 F1=1.0000 | Va Loss=0.0024 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=201s
+[2026-06-25 19:39:51] INFO | [FT] Ep  47/60 | Tr Loss=0.0030 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=205s
+[2026-06-25 19:39:56] INFO | [FT] Ep  48/60 | Tr Loss=0.0034 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=210s
+[2026-06-25 19:40:00] INFO | [FT] Ep  49/60 | Tr Loss=0.0030 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=214s
+[2026-06-25 19:40:04] INFO | [FT] Ep  50/60 | Tr Loss=0.0031 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=218s
+[2026-06-25 19:40:09] INFO | [FT] Ep  51/60 | Tr Loss=0.0033 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=223s
+[2026-06-25 19:40:13] INFO | [FT] Ep  52/60 | Tr Loss=0.0031 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=227s
+[2026-06-25 19:40:17] INFO | [FT] Ep  53/60 | Tr Loss=0.0031 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=231s
+[2026-06-25 19:40:22] INFO | [FT] Ep  54/60 | Tr Loss=0.0032 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=236s
+[2026-06-25 19:40:26] INFO | [FT] Ep  55/60 | Tr Loss=0.0031 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=240s
+[2026-06-25 19:40:30] INFO | [FT] Ep  56/60 | Tr Loss=0.0030 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=244s
+[2026-06-25 19:40:35] INFO | [FT] Ep  57/60 | Tr Loss=0.0028 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=249s
+[2026-06-25 19:40:39] INFO | [FT] Ep  58/60 | Tr Loss=0.0030 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=253s
+[2026-06-25 19:40:43] INFO | [FT] Ep  59/60 | Tr Loss=0.0030 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=257s
+[2026-06-25 19:40:48] INFO | [FT] Ep  60/60 | Tr Loss=0.0029 Acc=1.0000 F1=1.0000 | Va Loss=0.0023 Acc=1.0000 F1=1.0000 AUC=1.0000 | T=262s
+[2026-06-25 19:40:48] INFO | 
+==============================================================
+[2026-06-25 19:40:48] INFO |  ĐÁNH GIÁ CUỐI CÙNG — TẬP TEST (trọng số tốt nhất)
+[2026-06-25 19:40:48] INFO | ==============================================================
+[2026-06-25 19:40:48] INFO | Tải trọng số từ epoch 6
+[2026-06-25 19:40:48] INFO | 
+────────────────────────────────────────
+[2026-06-25 19:40:48] INFO |   Accuracy  : 1.0000  (100.00%)
+[2026-06-25 19:40:48] INFO |   Precision : 1.0000
+[2026-06-25 19:40:48] INFO |   Recall    : 1.0000
+[2026-06-25 19:40:48] INFO |   F1-Score  : 1.0000
+[2026-06-25 19:40:48] INFO |   ROC-AUC   : 1.0000
+[2026-06-25 19:40:48] INFO |   Loss      : 0.1385
+[2026-06-25 19:40:48] INFO | ────────────────────────────────────────
+
+[2026-06-25 19:40:48] INFO | Đã lưu biểu đồ: /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/training_curves.png
+[2026-06-25 19:40:48] INFO | Đã lưu confusion matrix: /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/confusion_matrix.png
+[2026-06-25 19:40:48] INFO | 
+==============================================================
+[2026-06-25 19:40:48] INFO |  HOÀN THÀNH!
+[2026-06-25 19:40:48] INFO |   Mô hình tốt nhất : /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/multimodal_transformer_best.pth
+[2026-06-25 19:40:48] INFO |   Log huấn luyện   : /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/training.log
+[2026-06-25 19:40:48] INFO |   Biểu đồ curves   : /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/training_curves.png
+[2026-06-25 19:40:48] INFO |   Confusion Matrix : /Users/minhtri86/Downloads/clinical_carotid_dataset_v3/outputs/confusion_matrix.png
+[2026-06-25 19:40:48] INFO | ==============================================================
