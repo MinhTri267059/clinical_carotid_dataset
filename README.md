@@ -29,6 +29,33 @@ Mô hình được huấn luyện trên bộ dữ liệu tổng hợp 300 bệnh
 
 ---
 
+## Phương Pháp Thực Hiện
+
+Mô hình áp dụng luồng xử lý End-to-End từ việc nhúng dữ liệu thô đến khi ra quyết định, thông qua 4 cơ chế cốt lõi:
+
+### 1. Token hóa Đa Phương Thức (Multimodal Tokenization)
+- **Nhánh Dữ Liệu Bảng (Tabular):** Lấy cảm hứng từ kiến trúc **FT-Transformer**. Các biến liên tục (như Tuổi, LDL-C, IMT) được đưa qua một phép chiếu tuyến tính (Linear Projection) độc lập để tạo ra các token vector. Các biến phân loại (Giới tính) được chuyển đổi thông qua lớp `nn.Embedding`.
+- **Nhánh Hình Ảnh (Vision):** Xử lý hình ảnh giống hệt **Vision Transformer (ViT)**. Ảnh siêu âm được thay đổi kích thước về 128x128 và cắt thành các mảnh nhỏ (patches) có kích thước 16x16. Để hạn chế sự phụ thuộc vào các thư viện bên ngoài (như `torchvision`), phép trích xuất patch được lập trình thủ công bằng `torch.unfold`.
+
+### 2. Dung Hợp Dữ Liệu bằng Transformer (Fusion & Masking)
+- Các token của bảng và ảnh được nối lại với nhau cùng với một token đại diện `[CLS]`.
+- **Segment Embeddings:** Mô hình được cấp thêm một vector nhúng để chỉ ra nguồn gốc của từng token (0: CLS, 1: Bảng, 2: Ảnh), giúp cơ chế Attention phân biệt rạch ròi các phương thức.
+- **Key Padding Mask:** Vì mỗi bệnh nhân có số lượng ảnh khác nhau (người có 1 ảnh IMT, người có thêm 4 ảnh CCA), mô hình sẽ đệm (pad) các khoảng trống bằng tensor rỗng, đồng thời sử dụng ma trận `pad_mask` để chặn mô hình "nhìn" vào các token rỗng này trong quá trình tính toán Attention.
+
+### 3. Tiền Huấn Luyện Tự Giám Sát (Self-Supervised Pre-training - SSP)
+Trước khi học cách dự đoán bệnh, mô hình được đào tạo theo cách tự giám sát bằng phương pháp **Masked Multimodal Reconstruction** (tương tự MAE hoặc BERT):
+- Thuật toán che khuất (mask) ngẫu nhiên **15%** số token đầu vào.
+- Mô hình phải sử dụng khối Transformer Encoder để nội suy và tái tạo lại các vector bị che khuất này thông qua hàm mất mát **MSE Loss**.
+- Nhờ quá trình này, mô hình tự động học được **mối tương quan sinh học** giữa các chỉ số mỡ máu trong bảng và đặc điểm hình ảnh trên siêu âm mà không cần tới nhãn phân loại.
+
+### 4. Tinh Chỉnh Có Giám Sát (Supervised Fine-Tuning)
+Sau khi có được bộ trọng số tốt từ giai đoạn khởi tạo phổ quát (SSP), mô hình được chuyển sang quá trình tinh chỉnh (Fine-tuning):
+- Vector trạng thái tại vị trí token `[CLS]` ở lớp cuối cùng được trích xuất.
+- Đưa qua khối Classifier (MLP với hàm kích hoạt GELU và Dropout) để xuất ra dự đoán nhị phân (Có / Không có mảng xơ vữa).
+- Quá trình này được tối ưu bằng hàm `CrossEntropyLoss` cùng bộ tối ưu `AdamW` và lịch trình học giảm dần `CosineAnnealingLR`.
+
+---
+
 ## Kiến Trúc Mô Hình
 
 | Thành phần | Chi tiết |
